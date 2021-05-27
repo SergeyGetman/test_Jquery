@@ -1,19 +1,6 @@
 
 
-// $( document ).ready(function(){
-//     const btn = document.querySelector(".start");
-//     const text = document.querySelector("h1");
-//     const cosmo = document.querySelector(".img-astro")
 
-//
-// });
-
-
-// btn.click(function(){ // задаем функцию при нажатиии на элемент с классом out
-//     btn.css({display: "none"});
-//
-//
-// });
 $(document).ready(function (){
 
 
@@ -26,11 +13,12 @@ $(document).ready(function (){
 
     btn.click(function (){
         btn.hide();
+        $(".footer").css({
+            transform: "rotate(0)"
+        })
 
         text.fadeIn({queue : false,})
         cosmo.fadeIn({queue : false})
-            //.animate({top: "-=80px"}, {queue : false, duration: 2000, easing: 'swing'})
-            //.animate({top : "+=80px"}, {queue : false});
 
         text.animate({
             width : "70%",
@@ -38,18 +26,36 @@ $(document).ready(function (){
             marginLeft: "-20%",
             top: "10px",
             fontSize: "400px",
-            borderWidth: "20px"
+
         },1000);
 
         cosmo.animate({
-            height: "300px",
+            height: "400px",
             left: "250px",
             top: "10px",
-            fontSize: "400px",
-        },{duration: 2000, easing: 'swing'});
-          cosmo.animate({top: "80px"}, 2000);
-          cosmo.animate({top: "-80px"}, 2000)
+
+        },1200);
+
+        for(let i = 0; i < 2; i++){
+            cosmo.animate({
+                height : "550px",
+                transition : "0.4s"
+
+            }, 200);
+            cosmo.animate({
+                height: "380px",
+                transition : "0.3s"
+            }, 100);
+
+        }
+
+        for(let i = 0; i < 3; i++){
+            cosmo.animate({top: "40px"}, 1000);
+            cosmo.animate({top: "-40px"}, 1000);
+        }
+
 
     })
 
 })
+
